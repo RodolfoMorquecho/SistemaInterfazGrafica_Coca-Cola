@@ -22,6 +22,8 @@ public class Principal extends JFrame implements ActionListener{
         submenuOpciones();
         submenuCalcular();
         submenuAcercaDe();
+        logotipoBienvenida();
+        llenadoDeFormulario();
     }
 
     //Panel - Icono de Ventana - Titulo de Ventana
@@ -29,6 +31,7 @@ public class Principal extends JFrame implements ActionListener{
         panel = new JPanel();
         panel.setLayout(null);
         this.getContentPane().add(panel);
+        panel.setBackground(new Color(255,0,0));  //Panel de color rojo por default
         setIconImage(new ImageIcon(getClass().getResource("images/icon.png")).getImage());
         setTitle("Pantalla principal");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -123,6 +126,71 @@ public class Principal extends JFrame implements ActionListener{
         itemCreador.addActionListener(this);
     }
 
+    //Logotipo principal Coca-Cola
+    private void logotipoBienvenida(){
+        //Imagen de logo
+        ImageIcon imagen = new ImageIcon(getClass().getResource("images/logo-coca.png"));
+        lblLogo = new JLabel(imagen);
+        lblLogo.setBounds(5,5,250,100);
+        panel.add(lblLogo);
+
+        //"Bienvenido"
+        lblBienvenido = new JLabel("Bienvenido");
+        lblBienvenido.setBounds(290,30,250,50);
+        lblBienvenido.setFont(new Font("Andale Mono",1,32));
+        lblBienvenido.setForeground(new Color(255,255,255));
+        panel.add(lblBienvenido);
+
+        //Titulo de apartado
+        lblTitulo = new JLabel("Datos del trabajador para el cálculo de vacaciones");
+        lblTitulo.setBounds(50,140,650,30);
+        lblTitulo.setFont(new Font("Andale Mono",0,22));
+        lblTitulo.setForeground(new Color(255,255,255));
+        panel.add(lblTitulo);
+    }
+
+    //Etiquetas previas a campos y area de texto
+    private void llenadoDeFormulario(){
+        //Etiqueta de Nombre
+        lblNombre = new JLabel("Nombre Completo:");
+        lblNombre.setBounds(25,195,150,25);
+        lblNombre.setFont(new Font("Andale Mono",1,12));
+        lblNombre.setForeground(new Color(255,255,255));
+        panel.add(lblNombre);
+
+        //Campo para nombre
+        tfNombre = new JTextField();
+        tfNombre.setBounds(25,220,150,25);
+        tfNombre.setBackground(new Color(233,233,233));
+        panel.add(tfNombre);
+
+        //Etiqueta apellido paterno
+        lblAPaterno = new JLabel("Apellido Paterno:");
+        lblAPaterno.setBounds(25,255,150,25);
+        lblAPaterno.setFont(new Font("Andale Mono",1,12));
+        lblAPaterno.setForeground(new Color(255,255,255));
+        panel.add(lblAPaterno);
+
+        //Campo para apellido paterno
+        tfAPaterno = new JTextField();
+        tfAPaterno.setBounds(25,280,150,25);
+        tfAPaterno.setBackground(new Color(233,233,233));
+        panel.add(tfAPaterno);
+
+        //Etiqueta apellido materno
+        lblAMaterno = new JLabel("Apellido Materno:");
+        lblAMaterno.setBounds(25,315,150,25);
+        lblAMaterno.setFont(new Font("Andale Mono",1,12));
+        lblAMaterno.setForeground(new Color(255,255,255));
+        panel.add(lblAMaterno);
+
+        //Campo para apellido materno
+        tfAMaterno = new JTextField();
+        tfAMaterno.setBounds(25,340,150,25);
+        tfAMaterno.setBackground(new Color(233,233,233));
+        panel.add(tfAMaterno);
+    }
+
     //Metodo para ejecutar los eventos de la barra de menu
     public void actionPerformed(ActionEvent e){
         if(e.getSource() == itemCreador){
@@ -132,7 +200,7 @@ public class Principal extends JFrame implements ActionListener{
     public static void main(String[] args){
         Principal pp = new Principal();
         pp.setVisible(true);
-        pp.setBounds(0,0,500,500);
+        pp.setBounds(0,0,640,535);
         pp.setResizable(false);
         pp.setLocationRelativeTo(null);
     }
