@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class Principal extends JFrame implements ActionListener{
+public class Principal extends JFrame implements ActionListener, ItemListener{
     private JMenuBar mb;  //Espacio reservado para colocar la barra
     private JMenu menuOpciones, menuCalcular, menuAcerca, menuColorFondo;
     private JMenuItem itemCalculo, itemRojo, itemNegro, itemMorado, itemCreador, itemSalir, itemNuevo;
@@ -23,7 +23,9 @@ public class Principal extends JFrame implements ActionListener{
         submenuCalcular();
         submenuAcercaDe();
         logotipoBienvenida();
-        llenadoDeFormulario();
+        informacionPersonal();
+        informacionLaboral();
+        footer();
     }
 
     //Panel - Icono de Ventana - Titulo de Ventana
@@ -149,8 +151,8 @@ public class Principal extends JFrame implements ActionListener{
         panel.add(lblTitulo);
     }
 
-    //Etiquetas previas a campos y area de texto
-    private void llenadoDeFormulario(){
+    //Etiquetas previas a campos y area de texto de informacion personal
+    private void informacionPersonal(){
         //Etiqueta de Nombre
         lblNombre = new JLabel("Nombre Completo:");
         lblNombre.setBounds(25,195,150,25);
@@ -161,7 +163,7 @@ public class Principal extends JFrame implements ActionListener{
         //Campo para nombre
         tfNombre = new JTextField();
         tfNombre.setBounds(25,220,150,25);
-        tfNombre.setBackground(new Color(233,233,233));
+        tfNombre.setBackground(new Color(228,228,228));
         panel.add(tfNombre);
 
         //Etiqueta apellido paterno
@@ -174,7 +176,7 @@ public class Principal extends JFrame implements ActionListener{
         //Campo para apellido paterno
         tfAPaterno = new JTextField();
         tfAPaterno.setBounds(25,280,150,25);
-        tfAPaterno.setBackground(new Color(233,233,233));
+        tfAPaterno.setBackground(new Color(228,228,228));
         panel.add(tfAPaterno);
 
         //Etiqueta apellido materno
@@ -187,9 +189,84 @@ public class Principal extends JFrame implements ActionListener{
         //Campo para apellido materno
         tfAMaterno = new JTextField();
         tfAMaterno.setBounds(25,340,150,25);
-        tfAMaterno.setBackground(new Color(233,233,233));
+        tfAMaterno.setBackground(new Color(228,228,228));
         panel.add(tfAMaterno);
     }
+
+    //Etiquetas previas a lista y area de texto de informacion laboral
+    private void informacionLaboral(){
+        //Etiqueta de Departamento
+        lblDepartamento = new JLabel("Selecciona el Departamento:");
+        lblDepartamento.setBounds(225,195,220,25);
+        lblDepartamento.setFont(new Font("Andale Mono",1,12));
+        lblDepartamento.setForeground(new Color(255,255,255));
+        panel.add(lblDepartamento);
+
+        //ComboBox de Departamento
+        listaDepartamento = new JComboBox();
+        listaDepartamento.setBounds(225,220,220,25);
+        panel.add(listaDepartamento);
+        listaDepartamento.addItem("");
+        listaDepartamento.addItem("Atención al Cliente");
+        listaDepartamento.addItem("Departamento de Logistica");
+        listaDepartamento.addItem("Departamento de Gerencia");
+        listaDepartamento.setBackground(new Color(228,228,228));
+        listaDepartamento.setFont(new Font("Andale Mono",1,12));
+        listaDepartamento.setForeground(new Color(255,0,0));
+        listaDepartamento.addItemListener(this);
+
+        //Etiqueta de Antiguedad
+        lblAntiguedad = new JLabel("Selecciona la Antiguedad:");
+        lblAntiguedad.setBounds(225,255,220,25);
+        lblAntiguedad.setFont(new Font("Andale Mono",1,12));
+        lblAntiguedad.setForeground(new Color(255,255,255));
+        panel.add(lblAntiguedad);
+
+        //ComboBox de Antiguedad
+        listaAntiguedad = new JComboBox();
+        listaAntiguedad.setBounds(225,280,220,25);
+        panel.add(listaAntiguedad);
+        listaAntiguedad.addItem("");
+        listaAntiguedad.addItem("1 año de servicio");
+        listaAntiguedad.addItem("2 a 6 años de servicio");
+        listaAntiguedad.addItem("7 años o mas de servicio");
+        listaAntiguedad.setBackground(new Color(228,228,228));
+        listaAntiguedad.setFont(new Font("Andale Mono",1,12));
+        listaAntiguedad.setForeground(new Color(255,0,0));
+        listaAntiguedad.addItemListener(this);
+
+        //Etiqueta resultado del calculo
+        lblResul = new JLabel("Resultado del Cálculo:");
+        lblResul.setBounds(225,315,220,25);
+        lblResul.setFont(new Font("Andale Mono",1,12));
+        lblResul.setForeground(new Color(255,255,255));
+        panel.add(lblResul);
+
+        //Area de texto del resultado
+        textArea1 = new JTextArea("\n    Aqui aparece el resultado del cálculo de las vacaciones");
+        textArea1.setFont(new Font("Andale Mono",1,12));
+        textArea1.setBackground(new Color(228,228,228));
+        textArea1.setForeground(new Color(255,0,0));
+        textArea1.setEditable(false);
+        scroll1 = new JScrollPane(textArea1);
+        scroll1.setBounds(225,340,360,80);
+        panel.add(scroll1);
+    }
+
+    //Etiquetas para el footer
+    private void footer(){
+        lblFooter = new JLabel("©2022 The Coca-Cola Company  |  Todos los derechos reservados");  //alt+184 = ©
+        lblFooter.setBounds(130,450,500,30);
+        lblFooter.setFont(new Font("Andale Mono",1,12));
+        lblFooter.setForeground(new Color(255,255,255));
+        panel.add(lblFooter);
+    }
+
+
+    public void itemStateChanged(ItemEvent e){
+
+    }
+
 
     //Metodo para ejecutar los eventos de la barra de menu
     public void actionPerformed(ActionEvent e){
@@ -200,7 +277,7 @@ public class Principal extends JFrame implements ActionListener{
     public static void main(String[] args){
         Principal pp = new Principal();
         pp.setVisible(true);
-        pp.setBounds(0,0,640,535);
+        pp.setBounds(0,0,640,550);
         pp.setResizable(false);
         pp.setLocationRelativeTo(null);
     }
