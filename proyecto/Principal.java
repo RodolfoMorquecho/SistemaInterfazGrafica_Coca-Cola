@@ -344,52 +344,52 @@ public class Principal extends JFrame implements ActionListener{
                             "\n recibe 6 dias de vacaciones.");
                 }
                 //Si trabaja en "Atención al Cliente" y tiene antiguedad de "2 a 6 años"
-                if(sector.equals(cadSec1) && tiempo.equals(cadTmpo2)){  //Reciben 6 dias de vacaciones
+                if(sector.equals(cadSec1) && tiempo.equals(cadTmpo2)){
                     textArea1.setText("\n El trabajador "+ tfNombre.getText() +" "+tfAPaterno.getText()+" "+tfAMaterno.getText()+
                             "\n quien labora en "+cadSec1+" con "+cadTmpo2+
                             "\n recibe 14 dias de vacaciones.");
                 }
                 //Si trabaja en "Atención al Cliente" y tiene antiguedad de "7 añps en adelante"
-                if(sector.equals(cadSec1) && tiempo.equals(cadTmpo3)){  //Reciben 6 dias de vacaciones
+                if(sector.equals(cadSec1) && tiempo.equals(cadTmpo3)){
                     textArea1.setText("\n El trabajador "+ tfNombre.getText() +" "+tfAPaterno.getText()+" "+tfAMaterno.getText()+
                             "\n quien labora en "+cadSec1+" con "+cadTmpo3+
                             "\n recibe 20 dias de vacaciones.");
                 }
 
                 //Si trabaja en "Departamento de Logistica" y tiene antiguedad de "1 año"
-                if(sector.equals(cadSec2) && tiempo.equals(cadTmpo1)){  //Reciben 6 dias de vacaciones
+                if(sector.equals(cadSec2) && tiempo.equals(cadTmpo1)){
                     textArea1.setText("\n El trabajador "+ tfNombre.getText() +" "+tfAPaterno.getText()+" "+tfAMaterno.getText()+
                             "\n quien labora en "+cadSec2+" con "+cadTmpo1+
                             "\n recibe 7 dias de vacaciones.");
                 }
                 //Si trabaja en "Departamento de Logistica" y tiene antiguedad de "2 a 6 años"
-                if(sector.equals(cadSec2) && tiempo.equals(cadTmpo2)){  //Reciben 6 dias de vacaciones
+                if(sector.equals(cadSec2) && tiempo.equals(cadTmpo2)){
                     textArea1.setText("\n El trabajador "+ tfNombre.getText() +" "+tfAPaterno.getText()+" "+tfAMaterno.getText()+
                             "\n quien labora en "+cadSec2+" con "+cadTmpo2+
                             "\n recibe 15 dias de vacaciones.");
                 }
                 //Si trabaja en "Departamento de Logistica" y tiene antiguedad de "7 años en adelante"
-                if(sector.equals(cadSec2) && tiempo.equals(cadTmpo3)){  //Reciben 6 dias de vacaciones
+                if(sector.equals(cadSec2) && tiempo.equals(cadTmpo3)){
                     textArea1.setText("\n El trabajador "+ tfNombre.getText() +" "+tfAPaterno.getText()+" "+tfAMaterno.getText()+
                             "\n quien labora en "+cadSec2+" con "+cadTmpo3+
                             "\n recibe 22 dias de vacaciones.");
                 }
 
                 //Si trabaja en "Departamento de Gerencia" y tiene antiguedad de "1 año"
-                if(sector.equals(cadSec3) && tiempo.equals(cadTmpo1)){  //Reciben 6 dias de vacaciones
+                if(sector.equals(cadSec3) && tiempo.equals(cadTmpo1)){
                     textArea1.setText("\n El trabajador "+ tfNombre.getText() +" "+tfAPaterno.getText()+" "+tfAMaterno.getText()+
                             "\n quien labora en "+cadSec3+" con "+cadTmpo1+
                             "\n recibe 10 dias de vacaciones.");
                 }
                 //Si trabaja en "Departamento de Gerencia" y tiene antiguedad de "2 s 6 años"
-                if(sector.equals(cadSec3) && tiempo.equals(cadTmpo2)){  //Reciben 6 dias de vacaciones
+                if(sector.equals(cadSec3) && tiempo.equals(cadTmpo2)){
                     textArea1.setText("\n El trabajador "+ tfNombre.getText() +" "+tfAPaterno.getText()+" "+tfAMaterno.getText()+
                             "\n quien labora en "+cadSec3+" con "+cadTmpo2+
                             "\n recibe 20 dias de vacaciones.");
                 }
 
                 //Si trabaja en "Departamento de Gerencia" y tiene antiguedad de "7 años en adelante"
-                if(sector.equals(cadSec3) && tiempo.equals(cadTmpo3)){  //Reciben 6 dias de vacaciones
+                if(sector.equals(cadSec3) && tiempo.equals(cadTmpo3)){
                     textArea1.setText("\n El trabajador "+ tfNombre.getText() +" "+tfAPaterno.getText()+" "+tfAMaterno.getText()+
                             "\n quien labora en "+cadSec3+" con "+cadTmpo3+
                             "\n recibe 30 dias de vacaciones.");
