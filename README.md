@@ -2,5 +2,4 @@
 
 ## Interfaz Principal
 
-![interfazFinal](https://user-images.githubusercontent.com/99112892/205860388-75a54f2b-e4d1-4241-8290-131faf27146b.png)
-
+![interfazFinal](https://user-images.githubusercontent.com/99112892/205860987-68273a93-5f5d-4fd1-bf28-4f21ac7edbaa.png)
