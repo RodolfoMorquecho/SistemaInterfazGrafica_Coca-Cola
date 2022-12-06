@@ -72,7 +72,8 @@ public class Licencia extends JFrame implements ChangeListener, ActionListener{
     //Seccion aceptar o rechazar condiciones
     private void respuestaUsuario(){
         //CheckBox
-        condicion = new JCheckBox("Yo Acepto");
+        //Agregamos el nombre de usuario, accediendo desde la clase y variable(publica) que lo contiene
+        condicion = new JCheckBox("Yo "+Bienvenida.texto+" Acepto");
         condicion.setBounds(10,250,300,30);
         condicion.addChangeListener(this);
         panel.add(condicion);
@@ -99,19 +100,35 @@ public class Licencia extends JFrame implements ChangeListener, ActionListener{
         panel.add(imgCoca);
     }
 
-    public void actionPerformed(ActionEvent e){
-        if(e.getSource() == boton1){
-
+    //Eventos del chackbox
+    public void stateChanged(ChangeEvent e){
+        if(condicion.isSelected() == true){
+            boton1.setEnabled(true);
+            boton2.setEnabled(false);
+        }
+        else{
+            boton1.setEnabled(false);
+            boton2.setEnabled(true);
         }
     }
 
-    public void stateChanged(ChangeEvent e){
-        if(condicion.isSelected() == true){
-
+    //Eventos de botones
+    public void actionPerformed(ActionEvent e){
+        if(e.getSource() == boton1){
+            Principal.ventanaPrincipal();
+            this.setVisible(false);
+        }
+        if(e.getSource() == boton2){
+            System.exit(0);  //Boton "No Acepto" saca al usuario de la interfaz
         }
     }
 
     public static void main(String[] args){
+        ventanaLicencia();
+    }
+
+    //Declarar este metodo publico, ya que lo llamaremos en otras clases/interfaz
+    public static void ventanaLicencia(){
         Licencia terminos = new Licencia();
         terminos.setVisible(true);
         terminos.setBounds(0,0,610,390);

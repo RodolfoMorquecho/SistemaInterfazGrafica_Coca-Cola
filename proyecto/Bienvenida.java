@@ -9,6 +9,10 @@ public class Bienvenida extends JFrame implements ActionListener {
     private JButton ingresar;
     private JTextField textField1;
     private JPanel panel;
+    //Crear variable para alojar nombre de usuario
+    //public: para que otras clases hagan uso de esta variable
+    //static: indica que el tipo de caracteristica va a ser publica(cualquiera tendra acceso)
+    public static String texto = "";  //Lo almacenado en esta variable podra ser utilizado por cualquier otra interfaz grafica
 
     public Bienvenida(){
         iniciarComponentes();
@@ -96,10 +100,24 @@ public class Bienvenida extends JFrame implements ActionListener {
 
     public void actionPerformed(ActionEvent e){
         if(e.getSource() == ingresar){
-
+            //Recupera el nombre ingresado en el campo de texto
+            //trim(): elimina los espacios antes y despues del nombre ingresado
+            texto = textField1.getText().trim();
+            if(texto.equals("")){  //Si el campo de texto esta vacio, no dejara avanzar y enviara un mensaje para que ingrese un nombre
+                JOptionPane.showMessageDialog(null,"Debes ingresar tu nombre");
+            }else{  //Si se ingreso un nombre:
+                //Se llamara al metodo "ventanaLicencia" con caracteristica publica de la clase Licencia, el cual contiene todas las caracteristicas de interfaz
+                Licencia.ventanaLicencia();  //Avanza a la interfaz de terminos y condiciones
+                this.setVisible(false);  //this(Está) interfaz actual la ponemos como no visible
+            }
         }
     }
     public static void main(String[] args) {
+        ventanaBienvenida();
+    }
+
+    //Declarar este metodo publico, ya que lo llamaremos en otras clases/interfaz
+    public static void ventanaBienvenida(){
         Bienvenida test = new Bienvenida();
         test.setVisible(true);
         test.setBounds(0,0,360,460);

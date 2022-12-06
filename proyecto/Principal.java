@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class Principal extends JFrame implements ActionListener, ItemListener{
+public class Principal extends JFrame implements ActionListener{
     private JMenuBar mb;  //Espacio reservado para colocar la barra
     private JMenu menuOpciones, menuCalcular, menuAcerca, menuColorFondo;
     private JMenuItem itemCalculo, itemRojo, itemNegro, itemMorado, itemCreador, itemSalir, itemNuevo;
@@ -137,9 +137,10 @@ public class Principal extends JFrame implements ActionListener, ItemListener{
         panel.add(lblLogo);
 
         //"Bienvenido"
-        lblBienvenido = new JLabel("Bienvenido");
-        lblBienvenido.setBounds(290,30,250,50);
-        lblBienvenido.setFont(new Font("Andale Mono",1,32));
+        //Accedemos a la variable que guarda el nombre desde la interfaz de Bienvenida, para dar la bienvenida personalizada en la interfaz principa,
+        lblBienvenido = new JLabel("Bienvenido "+Bienvenida.texto);  //Se tiene acceso porque es de caracteristica publica
+        lblBienvenido.setBounds(265,30,300,50);
+        lblBienvenido.setFont(new Font("Andale Mono",1,24));
         lblBienvenido.setForeground(new Color(255,255,255));
         panel.add(lblBienvenido);
 
@@ -219,7 +220,6 @@ public class Principal extends JFrame implements ActionListener, ItemListener{
         listaDepartamento.setBackground(new Color(228,228,228));
         listaDepartamento.setFont(new Font("Andale Mono",1,12));
         listaDepartamento.setForeground(new Color(255,0,0));
-        listaDepartamento.addItemListener(this);
 
         //Etiqueta de Antiguedad
         lblAntiguedad = new JLabel("Selecciona la Antiguedad:");
@@ -239,7 +239,6 @@ public class Principal extends JFrame implements ActionListener, ItemListener{
         listaAntiguedad.setBackground(new Color(228,228,228));
         listaAntiguedad.setFont(new Font("Andale Mono",1,12));
         listaAntiguedad.setForeground(new Color(255,0,0));
-        listaAntiguedad.addItemListener(this);
 
         //Etiqueta resultado del calculo
         lblResul = new JLabel("Resultado del Cálculo:");
@@ -267,12 +266,6 @@ public class Principal extends JFrame implements ActionListener, ItemListener{
         lblFooter.setForeground(new Color(255,255,255));
         panel.add(lblFooter);
     }
-
-
-    public void itemStateChanged(ItemEvent e){
-
-    }
-
 
     //Metodo para ejecutar los eventos de la barra de menu
     public void actionPerformed(ActionEvent e){
@@ -313,14 +306,21 @@ public class Principal extends JFrame implements ActionListener, ItemListener{
             tfAMaterno.setText(limpiar);
             listaDepartamento.setSelectedItem("");
             listaAntiguedad.setSelectedItem("");
+            textArea1.setText("");
         }
-        if(e.getSource() == itemSalir){  //Cierra la ventana
-            System.exit(0);
+        if(e.getSource() == itemSalir){  //Regresa al usuario a la interfaz de bienvenida
+            Bienvenida.ventanaBienvenida();  //Metodo de caracteritica publica que contiene las especificaciones de la interfaz de bienvenida
+            this.setVisible(false);  //"Está" interfaz actual(Principal) deja de ser visible
         }
-        if(e.getSource() == itemCalculo){
-            String sector = listaDepartamento.getSelectedItem().toString();
+        if(e.getSource() == itemCreador){
+            JOptionPane.showMessageDialog(null,"Desarrollado por Rodolfo Morquecho Fernández"+
+                    "\n        https://github.com/RodolfoMorquecho");
+        }
+        if(e.getSource() == itemCalculo){  //Obtener resultado de vacaciones segun la info del formulario
+            String sector = listaDepartamento.getSelectedItem().toString();  //Pasamos el item de la lista seleccionado a texto(String)
             String tiempo = listaAntiguedad.getSelectedItem().toString();
 
+            //Crear variables con todas las opciones de listas posibles para comparar con lo que se obtiene de lo que selecciono el trabajador
             String cadSec1 = "Atención al Cliente";
             String cadSec2 = "Departamento de Logistica";
             String cadSec3 = "Departamento de Gerencia";
@@ -328,15 +328,81 @@ public class Principal extends JFrame implements ActionListener, ItemListener{
             String cadTmpo2 = "2 a 6 años de servicio";
             String cadTmpo3 = "7 años o mas de servicio";
 
-            if(sector.equals(cadSec1) && tiempo.equals(cadTmpo1)){  //Reciben 6 dias de vacaciones
-                textArea1.setText("\n El trabajador "+ tfNombre.getText() +" "+tfAPaterno.getText()+" "+tfAMaterno.getText()+
-                                  "\n quien labora en "+cadSec1+" con "+cadTmpo1+
-                                  "\n recibe 6 dias de vacaciones.");
+            String vacio = "";
+
+            //Si alguno de los campos del formulario esta vacio, lanzara un mensaje que le diga al usuario que todos los campos deben estar llenados
+            if(tfNombre.getText().equals(vacio) || tfAPaterno.getText().equals(vacio) || tfAMaterno.getText().equals(vacio)
+             || listaDepartamento.getSelectedItem().toString().equals(vacio) || listaAntiguedad.getSelectedItem().toString().equals(vacio)){
+                JOptionPane.showMessageDialog(null,"Debes de llenar todos los campos.");
+            }
+            //En caso de que todos los campos sean llenadpos
+            else{
+                //Si trabaja en "Atención al Cliente" y tiene antiguedad de "1 año"
+                if(sector.equals(cadSec1) && tiempo.equals(cadTmpo1)){  //Reciben 6 dias de vacaciones
+                    textArea1.setText("\n El trabajador "+ tfNombre.getText() +" "+tfAPaterno.getText()+" "+tfAMaterno.getText()+
+                            "\n quien labora en "+cadSec1+" con "+cadTmpo1+
+                            "\n recibe 6 dias de vacaciones.");
+                }
+                //Si trabaja en "Atención al Cliente" y tiene antiguedad de "2 a 6 años"
+                if(sector.equals(cadSec1) && tiempo.equals(cadTmpo2)){  //Reciben 6 dias de vacaciones
+                    textArea1.setText("\n El trabajador "+ tfNombre.getText() +" "+tfAPaterno.getText()+" "+tfAMaterno.getText()+
+                            "\n quien labora en "+cadSec1+" con "+cadTmpo2+
+                            "\n recibe 14 dias de vacaciones.");
+                }
+                //Si trabaja en "Atención al Cliente" y tiene antiguedad de "7 añps en adelante"
+                if(sector.equals(cadSec1) && tiempo.equals(cadTmpo3)){  //Reciben 6 dias de vacaciones
+                    textArea1.setText("\n El trabajador "+ tfNombre.getText() +" "+tfAPaterno.getText()+" "+tfAMaterno.getText()+
+                            "\n quien labora en "+cadSec1+" con "+cadTmpo3+
+                            "\n recibe 20 dias de vacaciones.");
+                }
+
+                //Si trabaja en "Departamento de Logistica" y tiene antiguedad de "1 año"
+                if(sector.equals(cadSec2) && tiempo.equals(cadTmpo1)){  //Reciben 6 dias de vacaciones
+                    textArea1.setText("\n El trabajador "+ tfNombre.getText() +" "+tfAPaterno.getText()+" "+tfAMaterno.getText()+
+                            "\n quien labora en "+cadSec2+" con "+cadTmpo1+
+                            "\n recibe 7 dias de vacaciones.");
+                }
+                //Si trabaja en "Departamento de Logistica" y tiene antiguedad de "2 a 6 años"
+                if(sector.equals(cadSec2) && tiempo.equals(cadTmpo2)){  //Reciben 6 dias de vacaciones
+                    textArea1.setText("\n El trabajador "+ tfNombre.getText() +" "+tfAPaterno.getText()+" "+tfAMaterno.getText()+
+                            "\n quien labora en "+cadSec2+" con "+cadTmpo2+
+                            "\n recibe 15 dias de vacaciones.");
+                }
+                //Si trabaja en "Departamento de Logistica" y tiene antiguedad de "7 años en adelante"
+                if(sector.equals(cadSec2) && tiempo.equals(cadTmpo3)){  //Reciben 6 dias de vacaciones
+                    textArea1.setText("\n El trabajador "+ tfNombre.getText() +" "+tfAPaterno.getText()+" "+tfAMaterno.getText()+
+                            "\n quien labora en "+cadSec2+" con "+cadTmpo3+
+                            "\n recibe 22 dias de vacaciones.");
+                }
+
+                //Si trabaja en "Departamento de Gerencia" y tiene antiguedad de "1 año"
+                if(sector.equals(cadSec3) && tiempo.equals(cadTmpo1)){  //Reciben 6 dias de vacaciones
+                    textArea1.setText("\n El trabajador "+ tfNombre.getText() +" "+tfAPaterno.getText()+" "+tfAMaterno.getText()+
+                            "\n quien labora en "+cadSec3+" con "+cadTmpo1+
+                            "\n recibe 10 dias de vacaciones.");
+                }
+                //Si trabaja en "Departamento de Gerencia" y tiene antiguedad de "2 s 6 años"
+                if(sector.equals(cadSec3) && tiempo.equals(cadTmpo2)){  //Reciben 6 dias de vacaciones
+                    textArea1.setText("\n El trabajador "+ tfNombre.getText() +" "+tfAPaterno.getText()+" "+tfAMaterno.getText()+
+                            "\n quien labora en "+cadSec3+" con "+cadTmpo2+
+                            "\n recibe 20 dias de vacaciones.");
+                }
+
+                //Si trabaja en "Departamento de Gerencia" y tiene antiguedad de "7 años en adelante"
+                if(sector.equals(cadSec3) && tiempo.equals(cadTmpo3)){  //Reciben 6 dias de vacaciones
+                    textArea1.setText("\n El trabajador "+ tfNombre.getText() +" "+tfAPaterno.getText()+" "+tfAMaterno.getText()+
+                            "\n quien labora en "+cadSec3+" con "+cadTmpo3+
+                            "\n recibe 30 dias de vacaciones.");
+                }
             }
         }
     }
 
     public static void main(String[] args){
+        ventanaPrincipal();
+    }
+
+    public static void ventanaPrincipal(){
         Principal pp = new Principal();
         pp.setVisible(true);
         pp.setBounds(0,0,640,550);
