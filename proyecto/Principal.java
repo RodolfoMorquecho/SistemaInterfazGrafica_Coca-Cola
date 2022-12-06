@@ -164,6 +164,8 @@ public class Principal extends JFrame implements ActionListener, ItemListener{
         tfNombre = new JTextField();
         tfNombre.setBounds(25,220,150,25);
         tfNombre.setBackground(new Color(228,228,228));
+        tfNombre.setFont(new Font("Andale Mono",1,12));
+        tfNombre.setForeground(new Color(255,0,0));
         panel.add(tfNombre);
 
         //Etiqueta apellido paterno
@@ -177,6 +179,8 @@ public class Principal extends JFrame implements ActionListener, ItemListener{
         tfAPaterno = new JTextField();
         tfAPaterno.setBounds(25,280,150,25);
         tfAPaterno.setBackground(new Color(228,228,228));
+        tfAPaterno.setFont(new Font("Andale Mono",1,12));
+        tfAPaterno.setForeground(new Color(255,0,0));
         panel.add(tfAPaterno);
 
         //Etiqueta apellido materno
@@ -190,6 +194,8 @@ public class Principal extends JFrame implements ActionListener, ItemListener{
         tfAMaterno = new JTextField();
         tfAMaterno.setBounds(25,340,150,25);
         tfAMaterno.setBackground(new Color(228,228,228));
+        tfAMaterno.setFont(new Font("Andale Mono",1,12));
+        tfAMaterno.setForeground(new Color(255,0,0));
         panel.add(tfAMaterno);
     }
 
@@ -270,7 +276,63 @@ public class Principal extends JFrame implements ActionListener, ItemListener{
 
     //Metodo para ejecutar los eventos de la barra de menu
     public void actionPerformed(ActionEvent e){
-        if(e.getSource() == itemCreador){
+        if(e.getSource() == itemRojo){  //Tema Rojo
+            mb.setBackground(new Color(255,0,0));
+            panel.setBackground(new Color(255,0,0));
+            tfNombre.setForeground(new Color(255,0,0));
+            tfAPaterno.setForeground(new Color(255,0,0));
+            tfAMaterno.setForeground(new Color(255,0,0));
+            listaDepartamento.setForeground(new Color(255,0,0));
+            listaAntiguedad.setForeground(new Color(255,0,0));
+            textArea1.setForeground(new Color(255,0,0));
+        }
+        if(e.getSource() == itemNegro){  //Tema Negro
+            mb.setBackground(new Color(0,0,0));
+            panel.setBackground(new Color(0,0,0));
+            tfNombre.setForeground(new Color(0,0,0));
+            tfAPaterno.setForeground(new Color(0,0,0));
+            tfAMaterno.setForeground(new Color(0,0,0));
+            listaDepartamento.setForeground(new Color(0,0,0));
+            listaAntiguedad.setForeground(new Color(0,0,0));
+            textArea1.setForeground(new Color(0,0,0));
+        }
+        if(e.getSource() == itemMorado){  //Tema Morado
+            mb.setBackground(new Color(255,0,255));
+            panel.setBackground(new Color(255,0,255));
+            tfNombre.setForeground(new Color(255,0,255));
+            tfAPaterno.setForeground(new Color(255,0,255));
+            tfAMaterno.setForeground(new Color(255,0,255));
+            listaDepartamento.setForeground(new Color(255,0,255));
+            listaAntiguedad.setForeground(new Color(255,0,255));
+            textArea1.setForeground(new Color(255,0,255));
+        }
+        if(e.getSource() == itemNuevo){  //Limpia todos los campos de la ventana
+            String limpiar = "";
+            tfNombre.setText(limpiar);
+            tfAPaterno.setText(limpiar);
+            tfAMaterno.setText(limpiar);
+            listaDepartamento.setSelectedItem("");
+            listaAntiguedad.setSelectedItem("");
+        }
+        if(e.getSource() == itemSalir){  //Cierra la ventana
+            System.exit(0);
+        }
+        if(e.getSource() == itemCalculo){
+            String sector = listaDepartamento.getSelectedItem().toString();
+            String tiempo = listaAntiguedad.getSelectedItem().toString();
+
+            String cadSec1 = "Atención al Cliente";
+            String cadSec2 = "Departamento de Logistica";
+            String cadSec3 = "Departamento de Gerencia";
+            String cadTmpo1 = "1 año de servicio";
+            String cadTmpo2 = "2 a 6 años de servicio";
+            String cadTmpo3 = "7 años o mas de servicio";
+
+            if(sector.equals(cadSec1) && tiempo.equals(cadTmpo1)){  //Reciben 6 dias de vacaciones
+                textArea1.setText("\n El trabajador "+ tfNombre.getText() +" "+tfAPaterno.getText()+" "+tfAMaterno.getText()+
+                                  "\n quien labora en "+cadSec1+" con "+cadTmpo1+
+                                  "\n recibe 6 dias de vacaciones.");
+            }
         }
     }
 
