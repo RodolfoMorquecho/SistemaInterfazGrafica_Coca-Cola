@@ -22,5 +22,16 @@ dependiendo de la decisión tomada, podra acceder a la siguiente interfaz o term
  - *Reproduce el gif siguiente para ver el funcionamiento del sistema:*
  
  ![SitemaEjecutado](https://user-images.githubusercontent.com/99112892/206376553-c918137c-129c-4e2b-bdd9-23c7010834a5.gif)
+ 
+ 
+ ### Nota:
+ 
+Para este proyecto se utilizazorn imagenes de las que no se poseé ningun derecho de autor, su uso fue meramente con fin ilustrativo 
+y didactico. En cuanto a los términos y condiciones citados de la interfaz no tienen ninguna validez, solamente se tomaron a forma 
+de ejemplificar o simular un apartado para el proyecto.
+
+En caso de querer obtener el ejecutable para correr el programa sin necesidad de cargar todas las clases desde un IDE, basta con 
+dirigirse a la carpeta "Empaquetado", ahí encontrara un archibo nombrado "Sistema.jar", se debe descargar y lo podra ejecutar con 
+un par de clicks.
 
 
