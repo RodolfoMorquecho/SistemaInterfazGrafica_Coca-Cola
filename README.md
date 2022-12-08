@@ -19,7 +19,7 @@ dependiendo de la decisión tomada, podra acceder a la siguiente interfaz o term
  Tambien tiene otras funciones para que el empleado personalize el frame a su comodidad o regrese a la pantalla de 
  bienvenida.
  
- ***Reproduce el gif siguiente para ver el funcionamiento del sistema:***
+ - *Reproduce el gif siguiente para ver el funcionamiento del sistema:*
  
  ![SitemaEjecutado](https://user-images.githubusercontent.com/99112892/206376553-c918137c-129c-4e2b-bdd9-23c7010834a5.gif)
 
