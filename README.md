@@ -51,7 +51,7 @@ le arrojara el siguiente mensaje:
 ![1_1Bienvenida_Falla](https://user-images.githubusercontent.com/99112892/206396213-45b68048-1662-43ae-904e-bc72f3aaf1ce.png)
 
 
-- En caso contrario, de que si se introduzca un nombre:
+- En caso contrario, de que si se introduzca un nombre, se accedera a la interfaz de Licencia:
 
 ![1_2Bienvenida_Llenado](https://user-images.githubusercontent.com/99112892/206396349-76db0522-5909-4b80-b781-fabda5e6d2a2.png)
 
