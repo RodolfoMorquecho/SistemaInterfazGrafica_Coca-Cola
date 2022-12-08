@@ -57,3 +57,16 @@ le arrojara el siguiente mensaje:
 
 
 
+## Funcionalidad de Interfaz "Licencia"
+
+- Al terminar de leer los terminos se puede observar un check box "personalizado" ya que tiene el detalle que se añadio el nombre
+que proceso en la ventana anterior. Tambien se puede verificar que hay dos botones debajo, pero el de continuar esta deshabilitado,
+cuando presionamos "No Acepto" el programa se cierra: 
+
+![2Licencia](https://user-images.githubusercontent.com/99112892/206398488-41f86a41-fa84-4df1-b7ef-9d965c05f278.png)
+
+
+- Si seleccionamos el check box, se habilitara el boton "Continuar" de inmediato y si se presiona, se tendra acceso a la siguiente
+interfaz "Principal": 
+
+![2_1Licencia_Aceptar](https://user-images.githubusercontent.com/99112892/206399280-dc2b95fb-7a98-42c4-8754-288f981a99c1.png)
