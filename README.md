@@ -27,11 +27,13 @@ dependiendo de la decisión tomada, podra acceder a la siguiente interfaz o term
  ### Nota:
  
 Para este proyecto se utilizazorn imagenes de las que no se poseé ningun derecho de autor, su uso fue meramente con fin ilustrativo 
-y didactico. En cuanto a los términos y condiciones citados de la interfaz no tienen ninguna validez, solamente se tomaron a forma 
-de ejemplificar o simular un apartado para el proyecto.
+y didactico, por lo que no me hago responsable de un mal uso de las mismas.
+
+En cuanto a los términos y condiciones citados de la interfaz no tienen ninguna validez, solamente se tomaron a forma 
+de ejemplificar o simular un apartado para el proyecto, sientete libre de modificar el código a tu beneficio.
 
 En caso de querer obtener el ejecutable para correr el programa sin necesidad de cargar todas las clases desde un IDE, basta con 
-dirigirse a la carpeta "Empaquetado", ahí encontrara un archibo nombrado "Sistema.jar", se debe descargar y lo podra ejecutar con 
+dirigirse a la carpeta "Empaquetado", ahí encontrara un archivo nombrado "Sistema.jar", se debe descargar y lo podra ejecutar con 
 un par de clicks.
 
 
