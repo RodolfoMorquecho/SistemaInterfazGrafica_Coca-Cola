@@ -36,3 +36,24 @@ dirigirse a la carpeta "Empaquetado", ahí encontrara un archivo nombrado "Siste
 un par de clicks.*
 
 
+## Funcionalidad de Interfaz "Bienvenida"
+
+Cunado se ejecuta el archivo "Sistema.jar" se tiene establecido en MANIFEST.MF que la clase main con la que arrancara el programa,
+será con la de "Bienvenida", que es la que se muestra a continuación.
+
+![1Bienvenida_Vacia](https://user-images.githubusercontent.com/99112892/206395342-4fff7a7e-610f-43b0-a528-90f2852df10a.png)
+
+
+El usuario debera ingresar su nombre en el campo de texto y presionar el boton "ingresar", pero por algun error o una confunsión, el 
+usuario podría presionar el boton sin haber escrito algo en el campo del texto, lo cual no tendria sentido, así que el programa
+le arrojara el siguiente mensaje: 
+
+![1_1Bienvenida_Falla](https://user-images.githubusercontent.com/99112892/206396213-45b68048-1662-43ae-904e-bc72f3aaf1ce.png)
+
+
+En caso contrario, de que si se introduzca un nombre:
+
+![1_2Bienvenida_Llenado](https://user-images.githubusercontent.com/99112892/206396349-76db0522-5909-4b80-b781-fabda5e6d2a2.png)
+
+
+
