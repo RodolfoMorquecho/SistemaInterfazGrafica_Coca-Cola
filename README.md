@@ -6,6 +6,7 @@ La empresa **Coca-Cola Company** requiere de un programa con interfaz gráfica d
 los días de vacaciones a los que tiene derecho un trabajador, dependiendo de su puesto y antigüedad en la emprea.
 
 El programa deberá de contener tres distintas interfaces, para navegar entre ellas, las cuales son las siguientes:
+
 **1.Interfaz de bienvenida:** como su nombre lo menciona, será la primera pantalla con la que tendra interacción el usuario y 
 dependiendo de la decisión tomada, podra acceder a la siguiente interfaz o terminar la ejecución.
 
