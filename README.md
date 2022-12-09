@@ -70,3 +70,32 @@ cuando presionamos "No Acepto" el programa se cierra:
 interfaz "Principal": 
 
 ![2_1Licencia_Aceptar](https://user-images.githubusercontent.com/99112892/206399280-dc2b95fb-7a98-42c4-8754-288f981a99c1.png)
+
+
+
+## Funcionalidad de Interfaz "Principal"
+
+- Se puede observar en la barra de menu 3 apartados(Opciones, Calcular y Acerca de), seguido de una bienvenida personalizada con 
+el nombre que se almaceno desde la primer interfaz y por ultimo una seccion con 5 campos de texto y una area de texto donde se 
+mostrara el resultado, segun los datos ingresados.
+
+![3Principal](https://user-images.githubusercontent.com/99112892/206597700-70f4b5e7-5d2f-4d8f-8dae-551e16927e5d.png)
+
+
+- El apartado **"Acerca de"** contiene en menu "El creador", que al presionarlo, nos dara información de la persona que dearrollo
+el software.
+
+![3_2Principal_Creador1](https://user-images.githubusercontent.com/99112892/206598340-a09242ea-92e4-4847-a8c8-c660d2dc8a34.png)
+
+![3_2Principal_Creador2](https://user-images.githubusercontent.com/99112892/206598367-75604e77-c0ca-44f9-a0bb-f24ef388f883.png)
+
+
+- El apartado **"Opciones"** contiene en menu **"Color de Fondo"** que a su vez tiene como submenu 3 items(Rojo, Negro, Morado) y 
+cuando se selecciona alguno, se modifica el color de la ventana.
+
+![3_1Principal_Color1](https://user-images.githubusercontent.com/99112892/206599022-c9669f30-3974-40e2-a4e4-6d1d8e4c5388.png)
+
+![3_1Principal_Color2](https://user-images.githubusercontent.com/99112892/206599050-27429071-a13c-452b-9d0a-bbe7288a5ec4.png)
+
+
+
