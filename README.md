@@ -14,7 +14,7 @@ dependiendo de la decisión tomada, podra acceder a la siguiente interfaz o term
 **2. Interfaz de términos y condicione:** en esta sección el usuario leerá los terminos estipulados por la empresa sobre el uso,
  modificación o alteración del diseño del código y tendra la decisión de aceptarlos o rechazarlos.
  
- **3. Interfaz de paantalla principal:** en esta interfaz se encuentra la funcion principal del sistema como lo es calcular el
+ **3. Interfaz de pantalla principal:** en esta interfaz se encuentra la funcion principal del sistema como lo es calcular el
  día de vacaciones que le corresponden a los empleados de la corporación, segun los parametros ya mencionados. 
  Tambien tiene otras funciones para que el empleado personalize el frame a su comodidad o regrese a la pantalla de 
  bienvenida.
@@ -27,7 +27,7 @@ dependiendo de la decisión tomada, podra acceder a la siguiente interfaz o term
  ### Nota:
  
 *Para este proyecto se utilizazorn imagenes de las que no se poseé ningun derecho de autor, su uso fue meramente con fin ilustrativo 
-y didactico, por lo que no me hago responsable de un mal uso de las mismas.En cuanto a los términos y condiciones citados de la interfaz
+y didactico, por lo que no me hago responsable de un mal uso de las mismas. En cuanto a los términos y condiciones citados de la interfaz
 no tienen ninguna validez, solamente se tomaron a forma de ejemplificar o simular un apartado para el proyecto, sientete libre de modificar
 el código a tu beneficio.*
 
@@ -90,12 +90,42 @@ el software.
 ![3_2Principal_Creador2](https://user-images.githubusercontent.com/99112892/206598367-75604e77-c0ca-44f9-a0bb-f24ef388f883.png)
 
 
-- El apartado **"Opciones"** contiene en menu **"Color de Fondo"** que a su vez tiene como submenu 3 items(Rojo, Negro, Morado) y 
-cuando se selecciona alguno, se modifica el color de la ventana.
+- El apartado **"Opciones"** contiene en menu **"Color de Fondo"** que a su vez tiene como submenu 3 items*(Rojo, Negro, Morado)* y 
+cuando se selecciona alguno se modifica el color de la ventana, lo cuál, le da esa libertad de personalizar la ventana a el empleado.
 
 ![3_1Principal_Color1](https://user-images.githubusercontent.com/99112892/206599022-c9669f30-3974-40e2-a4e4-6d1d8e4c5388.png)
 
 ![3_1Principal_Color2](https://user-images.githubusercontent.com/99112892/206599050-27429071-a13c-452b-9d0a-bbe7288a5ec4.png)
 
+
+- El apartado **"Calcular"** como su nombre lo dice, calcula el día de vacaciones correspondientes a cada empleado, sugun su 
+departamento y la antiguedad que tiene laborando en la empresa, pero para ello primero se deben llenar los campos de texto que 
+solicitan la información personal y laboral.
+
+![3_3Principal_CalculoFallido1](https://user-images.githubusercontent.com/99112892/206601267-6295700a-c9a7-4114-b084-f1268d6d65bf.png)
+
+- Si alguno de los campos esta vacio, el sistema manda un mensaje donde se pide al usuario que se complete el formulario y no realiza
+ningun calculo.
+
+![3_3Principal_CalculoFallido2](https://user-images.githubusercontent.com/99112892/206601546-5589c936-f85d-4241-b978-1e338a713572.png)
+
+- Cuando todos los campos son cubiertos y se presiona el menu "Calcular", el sistema arroja el resultado en el area de texto con toda 
+la información recabada.![3_3Principal_CalculoExitoso](https://user-images.githubusercontent.com/99112892/206601864-3725f31b-6f3a-4c16-ab0a-22f93c7f9b4a.png)
+
+
+- Regresando al apartado **"Opciones"*** encontramos que tambien hay un menu llamado **"Nuevo"** y cuando es seleccionado, limpia
+todos los datos ingresados en los campos y tambien el area de los resultados, para comenzar un nuevo formulario.
+
+![3_4Principal_Nuevo1](https://user-images.githubusercontent.com/99112892/206602442-8d685eeb-e549-4407-9cf1-dc5799b7bdd7.png)
+
+![3_4Principal_Nuevo2](https://user-images.githubusercontent.com/99112892/206602463-069053c7-3a4a-469d-8679-77149b8d60ca.png)
+
+
+- Por ultimo, en el mismo apartado de **"Opciones"** encontramos el menu **"Salir"** que saca al usuario de la interfaz principal 
+y lo regrea a la interfaz de bienvenida.
+
+![3_5Principal_Salir](https://user-images.githubusercontent.com/99112892/206603019-b9bc85b8-e7b3-43ef-96c9-beaed2fa50ef.png)
+
+![1Bienvenida_Vacia](https://user-images.githubusercontent.com/99112892/206603043-f64cecf2-7f5a-438b-8bd3-989593c99727.png)
 
 
